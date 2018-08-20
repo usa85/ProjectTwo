@@ -1,5 +1,2 @@
 DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE clientes_db;
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE trainers_db;
+CREATE DATABASE gymInfo_db;
