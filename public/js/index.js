@@ -4,6 +4,49 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+
+
+//Create an on click function for taking the values for searching for trainers
+$('#newTrainers').on('click', function (event) {
+  event.preventDefault();
+  console.log('here');
+  var newTrainer = {
+    firstName: $("#trainerFirstName").val().trim(),
+    lastName: $("#trainerLastName").val().trim(),
+    certification: $("#certification").val(),
+    availability: $("#trainerAvailability").val()
+  };
+  
+  $.ajax('/api/trainers', {
+    type: 'POST',
+    data: newTrainer
+  }).then(
+    function () {
+      console.log('posted collection', newTrainer);
+    }
+  );
+});
+//Create an on click funciton for taking the values for seaching for clients
+$('#newClients').on('click', function (event) {
+  event.preventDefault();
+  console.log('here');
+  var newClient = {
+    firstName: $("#clientsFirstName").val().trim(),
+    lastName: $("#clientsLastName").val().trim(),
+    availability: $("#clientAvailability").val(),
+    goals: $("workoutGoals").val()
+  };
+  console.log(newClient);
+  $.ajax('/api/clients', {
+    type: 'POST',
+    data: newClient
+  }).then(
+    function () {
+      console.log('posted collection', newClient);
+    }
+  );
+});
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -82,18 +125,7 @@ var handleFormSubmit = function(event) {
   $exampleDescription.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+
