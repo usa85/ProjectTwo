@@ -1,5 +1,5 @@
-var db = require("../models")
- //var ToDo = require("../models/toDoList")
+var db = require("../models");
+//var ToDo = require("../models/toDoList")
 // console.log(ToDo);
 // Routes
 // =============================================================
