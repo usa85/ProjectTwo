@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
-  var Clients = sequelize.define("Clients", {
+  var Client = sequelize.define("clients", {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     availability: DataTypes.STRING,
-    goals: DataTypes.Text
+    goals: DataTypes.TEXT
   });
-  return Clients;
+  return Client;
 };
