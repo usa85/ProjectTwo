@@ -7,6 +7,18 @@ module.exports = function(app) {
       });
     });
 
+  app.get("/clients", function (req, res) {
+    res.render("clients",  {
+
+    });
+  })
+
+  app.get("/trainers", function (req, res) {
+    res.render("trainers",  {
+
+    });
+  })
+
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
