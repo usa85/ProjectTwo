@@ -1,33 +1,216 @@
-<div id="home">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.html">
+    <i class="fas fa-dumbbell"> Fit-Link &emsp;&emsp;&emsp;&emsp;</i>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="list-style-type:none">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/clients">Clients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/trainers">Trainers</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid text-center bg-dark">
   <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
+    <h1 class="display-4">Fit-Link</h1>
+    <h2 class="lead">Fit-Link is designed to seemlessly connect personal trainers with clients, as well as those just looking for a workout
+      buddy. By filling out a simple form you will be connected with a match in a matter of seconds.</h2>
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<!-- Form testing start -->
+
+<!--
+
+<div class="container">
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+										<label for="remember"> Remember Me</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--
+
+/*<div class="container">
+
+  <form>
+    <div class="info">Client Registration</div>
+    <br>
+    <div class="row">
+      <div class="col-2">
+
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col-2">
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <div class="col-2">
+        <label for="formGroupExampleInput"></label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Age">
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Availability
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Morning 8-12pm</a>
+        <a class="dropdown-item" href="#">Afternoon 12-4pm</a>
+        <a class="dropdown-item" href="#">Evening 4-9pm</a>
+      </div>
+    </div>
+    <br>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Trainer Preference
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Male trainer</a>
+        <a class="dropdown-item" href="#">Female trainer</a>
+        <a class="dropdown-item" href="#">No Preference</a>
+      </div>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Fitness Goals</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+
+
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</div>
+</form>
+</div>
+-->
+
+<!-- Form testing end-->
+
+
+<nav class="navbar justify-content-center navbar-light bg-dark footer navbar-fixed-bottom">
+  <p class="navbar-brand" id="copyright">
+    <p>
+      <strong>Built by:&nbsp;</strong> |&nbsp;</p>
+    <p>
+      <a class="author" href="https://github.com/BFRaven" target="_blank"> Duncan Moore </a>
+    </p>
+    <p> &nbsp;|&nbsp; </p>
+    <p>
+      <a class="author" href="https://github.com/" target="_blank"> Justin Treischman </a>
+    </p>
+    <p> &nbsp;|&nbsp; </p>
+    <p>
+      <a class="author" href="https://github.com/Cmiller8421" target="_blank"> Corey Miller </a>
+    </p>
+    <p> &nbsp;|&nbsp; </p>
+    <p>
+      <a class="author" href="https://github.com/rabicawal99" target="_blank"> Rabic Ganni</a>
+    </p>
+    <p> &nbsp;|&nbsp;</p>
+    <p>
+      <a class="author" href="https://github.com/usa85" target="_blank"> Pierre J. Callies</a>
+    </p>
+    <p> &nbsp;|&nbsp; </p>
+  </p>
+</nav>

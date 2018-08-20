@@ -1,3 +1,45 @@
-.list-group-item {
-  line-height: 2.5;
+body {
+  font-family:'Lora', serif;
+  background-image: url("../images/wallpaper.jpg");
+   /* Create the parallax scrolling effect */
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   color:white;
 }
+.fas{
+  margin-right: 12.5em;
+  font-size:26px;
+}
+.navbar{
+  opacity:.93;
+  border-top: 1px solid black;
+  border-bottom:1px solid black;
+}
+.jumbotron{
+  margin-top: 20px;
+  opacity:.93;
+  background-color:grey;
+  background-image: url("../images/trainer2.png");
+  background-position: center;
+  color:white;
+  background-repeat: no-repeat;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-size: 65%;
+  padding:80px;
+}
+  .footer {
+    position:relative;
+    bottom:0;
+    width:100%;
+    padding-top:20px;
+    height:8%;   /* Height of the footer */
+    opacity:.93;
+    overflow: auto;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+
