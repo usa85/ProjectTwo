@@ -22,6 +22,7 @@ module.exports = function(app) {
     });
   });
 
+
   // Create a new example
   app.post("/api/trainers", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
