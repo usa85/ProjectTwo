@@ -7,7 +7,7 @@ var $exampleList = $("#example-list");
 
 
 //Create an on click function for taking the values for searching for trainers
-$('#newTrainers').on('click', function (event) {
+$('#trainerSubmit').on('click', function (event) {
   event.preventDefault();
   console.log('here');
   var newTrainer = {
@@ -27,14 +27,14 @@ $('#newTrainers').on('click', function (event) {
   );
 });
 //Create an on click funciton for taking the values for seaching for clients
-$('#newClients').on('click', function (event) {
+$('#clientSubmit').on('click', function (event) {
   event.preventDefault();
   console.log('here');
   var newClient = {
     firstName: $("#clientsFirstName").val().trim(),
     lastName: $("#clientsLastName").val().trim(),
     availability: $("#clientAvailability").val(),
-    goals: $("workoutGoals").val()
+    goals: $("#workoutGoals").val().trim()
   };
   console.log(newClient);
   $.ajax('/api/clients', {
