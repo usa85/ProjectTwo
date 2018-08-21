@@ -21,8 +21,10 @@ module.exports = function(app) {
   app.post("/api/clients", function(req, res) {
     console.log(req.body);
     db.Client.create({
-      text: req.body.text,
-      complete: req.body.complete
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      availability: req.body.availability,
+      goals: req.body.goals
     }).then(function(dbClient) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbClient);
