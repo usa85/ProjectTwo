@@ -13,8 +13,8 @@ $('#trainerSubmit').on('click', function (event) {
   var newTrainer = {
     firstName: $("#trainerFirstName").val().trim(),
     lastName: $("#trainerLastName").val().trim(),
-    certification: $("#certification").val(),
-    availability: $("#trainerAvailability").val()
+    certification: $("#certification option:selected").val(),
+    availability: $("#trainerAvailability option:selected").val()
   };
   
   $.ajax('/api/trainers', {
@@ -33,7 +33,7 @@ $('#clientSubmit').on('click', function (event) {
   var newClient = {
     firstName: $("#clientsFirstName").val().trim(),
     lastName: $("#clientsLastName").val().trim(),
-    availability: $("#clientAvailability").val(),
+    availability: $("#clientAvailability option:selected").val(),
     goals: $("#workoutGoals").val().trim()
   };
   console.log(newClient);
