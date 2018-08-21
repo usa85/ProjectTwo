@@ -109,6 +109,11 @@
       });
     });
 
+     $('.dropdown-item li a').on('click', function () {
+           clientAvailable = $('.dropdown-item').val($(this).text());
+            console.log(clientAvailable);
+        });
+
 
 
   </script>

@@ -51,7 +51,7 @@ body {
   /* form CSS */
 
   .inputForm {
-    height: 500px;
+    height: 520px;
     width: 600px;
   }
 
@@ -152,12 +152,23 @@ body {
   }
   
   .login-button{
-    margin-top: 5px;
+    margin-top: 30px;
   }
   
   .login-register{
     font-size: 11px;
     text-align: center;
   }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black!important;
+    font-size:14px!important;
+    font-style:arial;
+}
+.custom-select {
+  color:black;
+  font-size:14px;
+  font-style: arial;
+}
 
 
