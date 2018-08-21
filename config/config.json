@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "romeo",
+    "password": "rootroot",
     "database": "gymInfo_db",
     "host": "localhost",
     "dialect": "mysql"

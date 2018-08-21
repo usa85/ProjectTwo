@@ -1,3 +1,5 @@
+var db = require("../models");
+
 module.exports = function(app) {
   // GET route for getting all of the todos
   app.get("/api/trainers", function(req, res) {
@@ -16,8 +18,10 @@ module.exports = function(app) {
   app.post("/api/trainers", function(req, res) {
     console.log(req.body);
     db.Trainer.create({
-      text: req.body.text,
-      complete: req.body.complete
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      certification: req.body.certification,
+      availability: req.body.availability
     }).then(function(dbTrainers) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbTrainers);
