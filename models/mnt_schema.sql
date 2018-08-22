@@ -1,0 +1,1 @@
+SELECT * FROM mntrainers_db.trainers;
