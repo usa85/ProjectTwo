@@ -11,10 +11,11 @@ $('#trainerSubmit').on('click', function (event) {
   event.preventDefault();
   console.log('here');
   var newTrainer = {
-    firstName: $("#trainerFirstName").val().trim(),
-    lastName: $("#trainerLastName").val().trim(),
-    certification: $("#certification option:selected").val(),
-    availability: $("#trainerAvailability option:selected").val()
+    trainerName: $("#trainerName").val().trim(),
+    trainerEmail: $("#trainerEmail").val().trim(),
+    trainerPhone: $("#trainerPhone").val(),
+    trainerAvailability: $("#trainerAvailability option:selected").val(),
+    trainerAbout: $("#trainerAbout").val().trim()
   };
   
   $.ajax('/api/trainers', {
@@ -26,15 +27,20 @@ $('#trainerSubmit').on('click', function (event) {
     }
   );
 });
+
+
+
+
 //Create an on click funciton for taking the values for seaching for clients
 $('#clientSubmit').on('click', function (event) {
   event.preventDefault();
   console.log('here');
   var newClient = {
-    firstName: $("#clientsFirstName").val().trim(),
-    lastName: $("#clientsLastName").val().trim(),
-    availability: $("#clientAvailability option:selected").val(),
-    goals: $("#workoutGoals").val().trim()
+    clientName: $("#clientName").val().trim(),
+    clientEmail: $("#clientEmail").val().trim(),
+    clientPhone: $("#clientPhone").val(),
+    clientAvailability: $("#clientAvailability option:selected").val(),
+    clientAbout: $("#clientAbout").val().trim()
   };
   console.log(newClient);
   $.ajax('/api/clients', {
