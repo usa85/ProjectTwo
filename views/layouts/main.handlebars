@@ -91,32 +91,19 @@
 
   <script>
     $(".submitBtn").click(function () {
-      $(".inputForm").animate({
+      $(".inputForm").fadeOut({
 
-        'marginLeft': "-=400px" //moves left
-
-      }, 1, function () {
+      }, 10000, function () {
         // Animation complete.
       });
     });
 
     $("#trainerSubmit").click(function () {
-      $(".inputForm").animate({
-
-        'marginLeft': "-=400px" //moves left
-
-      }, 1, function () {
+      $(".inputForm").fadeOut({
+      }, 10000, function () {
         // Animation complete.
       });
     });
-
-     $('.dropdown-item li a').on('click', function () {
-           clientAvailable = $('.dropdown-item').val($(this).text());
-            console.log(clientAvailable);
-        });
-
-
-
   </script>
 </body>
 
