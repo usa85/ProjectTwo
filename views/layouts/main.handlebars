@@ -90,30 +90,22 @@
 
 
   <script>
-    $(".submitBtn").click(function () {
-      $(".inputForm").animate({
+    $("#clientSubmit").click(function () {
+     $(".inputForm").fadeOut({
 
-        'marginLeft': "-=400px" //moves left
+     }, 10000, function () {
+       // Animation complete.
+     });
+   });
 
-      }, 1, function () {
-        // Animation complete.
-      });
-    });
+   $("#trainerSubmit").click(function () {
+     $(".inputForm").fadeOut({
+     }, 10000, function () {
+       // Animation complete.
+     });
+   });
 
-    $("#trainerSubmit").click(function () {
-      $(".inputForm").animate({
 
-        'marginLeft': "-=400px" //moves left
-
-      }, 1, function () {
-        // Animation complete.
-      });
-    });
-
-     $('.dropdown-item li a').on('click', function () {
-           clientAvailable = $('.dropdown-item').val($(this).text());
-            console.log(clientAvailable);
-        });
 
 
 

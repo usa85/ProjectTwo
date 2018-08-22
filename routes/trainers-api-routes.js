@@ -18,10 +18,12 @@ module.exports = function(app) {
   app.post("/api/trainers", function(req, res) {
     console.log(req.body);
     db.Trainer.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      certification: req.body.certification,
-      availability: req.body.availability
+      trainerName: req.body.trainerName,
+      trainerEmail: req.body.trainerEmail,
+      trainerPhone: req.body.trainerPhone,
+      trainerAvailability: req.body.trainerAvailability,
+      trainerAbout: req.body.trainerAbout
+
     }).then(function(dbTrainers) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbTrainers);
