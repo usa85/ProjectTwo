@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+      
+    <div id="map"></div>
+    <script>
+
+
+
+
+
+    
+      function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: new google.maps.LatLng(46.7296,-94.6859),
+          mapTypeId: 'terrain'
+        });
+
+        var markers =[];
+
+    
+
+      // Loop through the results array and place a marker for each
+      // set of coordinates.
+    
+      for (var i = 0; i < trainerjs.length; i++) {
+        var marker = new google.maps.Marker({ position: { lat: +trainerjs[i].lat, lng: +trainerjs[i].lng }, map: map, title: trainerjs[i].LastName })
+        markers.push(marker)
+
+        console.log(trainerjs[i].lat, trainerjs[i].lng)
+
+        console.log(trainerjs[i].LastName)
+
+        marker.addListener('click', function () {
+            country = this.title.toUpperCase();
+            console.log(country)
+
+
+            var searchResults;
+            database.ref("trainers").orderByKey().equalTo(country).on("value", function (childSnapshot) {
+
+                searchResults = childSnapshot.val();
+                console.log(searchResults);
+
+                searchKey = childSnapshot.key;
+                music.renderSearchResults(searchResults, country);
+            })
+
+            
+        });
+
+    }
+    console.log(markers);
+}
+
+
+// script load buttons
+$(document).ready(function () {
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    // script loads the map in the id #map-view and position it as a word map.
+    // Initialize and add the map
+
+})
+    </script>
+     
+     <script type="text/javascript" src="../models/trainerjs.js"></script>
+     <script type="text/javascript" src="assets/javascripts/javascriptmap.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfHquEEPHJDwuOWeK3pgkCpWAk2Q40p9E&callback=initMap"></script>
+    
+  </body>
+</html>
