@@ -13,7 +13,6 @@ body {
   font-size:26px;
 }
 .navbar{
-
   opacity:.93;
   border-top: 1px solid black;
   border-bottom:1px solid black;
@@ -32,11 +31,11 @@ body {
   padding:80px;
 }
   .footer {
-    position:fixed;
+    position:relative;
     bottom:0;
     width:100%;
     padding-top:20px;
-    height:8%;   /* Height of the footer */
+    height:40px;   /* Height of the footer */
     opacity:.93;
     overflow: auto;
     border-top: 1px solid black;
@@ -44,15 +43,17 @@ body {
   }
 
   .btn {
-    margin-top: 20px;
+    margin-top: 0px;
     margin-right:20px;
+    margin-bottom:70px;
   }
   
   /* form CSS */
 
   .inputForm {
-    height: 520px;
-    width: 600px;
+    margin-top:0px;
+    height: 575px;
+    width: 650px;
   }
 
   #clientBtn{
