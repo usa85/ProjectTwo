@@ -1,0 +1,37 @@
+<div class="container">
+
+{{#each clients}}
+
+<div class="float-left">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h4 class="card-title">{{this.clientName}}</h4>
+                                    <p class="card-text">{{this.clientAvailibility}}</p>
+                                    
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">{{this.clientName}}</h4>
+                                    <p class="card-text">{{this.clientAbout}}</p>
+                                    <p class="card-text">{{this.clientPhone}}</p>
+                                    <p class="card-text">{{this.clientEmail}}</p>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{{/each}}
+    
+</div>
+

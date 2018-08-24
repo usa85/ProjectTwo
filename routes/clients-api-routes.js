@@ -1,19 +1,16 @@
 var db = require("../models");
-//var ToDo = require("../models/toDoList")
-// console.log(ToDo);
+
 // Routes
 // =============================================================
 module.exports = function(app) {
   // GET route for getting all of the todos
-  app.get("/api/clients", function(req, res) {
-    //var searchTrainers = the value of what time of day people are selecting
-
+  app.get("/api/trainers/:trainerAvailability", function(req, res) {
     db.Trainer.findAll({
       where: {
-        // The clients time of day is the same as the trainer
+        trainerAvailability: req.params.trainerAvailability
       }
-    }).then(function(dbClients) {
-      res.json(dbClients);
+    }).then(function(dbTrainers) {
+      res.json(dbTrainers);
     });
   });
 
