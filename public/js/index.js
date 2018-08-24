@@ -4,80 +4,89 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-
-
 //Create an on click function for taking the values for searching for trainers
-$('#trainerSubmit').on('click', function (event) {
+$("#trainerSubmit").on("click", function(event) {
   event.preventDefault();
-  console.log('here');
+  console.log("here");
   var newTrainer = {
-    trainerName: $("#trainerName").val().trim(),
-    trainerEmail: $("#trainerEmail").val().trim(),
+    trainerName: $("#trainerName")
+      .val()
+      .trim(),
+    trainerEmail: $("#trainerEmail")
+      .val()
+      .trim(),
     trainerPhone: $("#trainerPhone").val(),
     trainerAvailability: $("#trainerAvailability option:selected").val(),
-    trainerAbout: $("#trainerAbout").val().trim()
+    trainerAbout: $("#trainerAbout")
+      .val()
+      .trim()
   };
-  
-  $.ajax('/api/trainers', {
-    type: 'POST',
+  $.ajax("/api/trainers", {
+    type: "POST",
     data: newTrainer
-  }).then(
-    function () {
-      console.log('posted collection', newTrainer);
-    }
-  );
+  }).then(function() {
+    $.ajax({
+      method: "GET",
+      url: "/api/clients/" + $("#trainerAvailability option:selected").val()
+    }).then(function(data) {
+      console.log(data);
+    });
+  });
 });
-
-
-
 
 //Create an on click funciton for taking the values for seaching for clients
-$('#clientSubmit').on('click', function (event) {
+$("#clientSubmit").on("click", function(event) {
   event.preventDefault();
-  console.log('here');
+  
   var newClient = {
-    clientName: $("#clientName").val().trim(),
-    clientEmail: $("#clientEmail").val().trim(),
+    clientName: $("#clientName")
+      .val()
+      .trim(),
+    clientEmail: $("#clientEmail")
+      .val()
+      .trim(),
     clientPhone: $("#clientPhone").val(),
     clientAvailability: $("#clientAvailability option:selected").val(),
-    clientAbout: $("#clientAbout").val().trim()
+    clientAbout: $("#clientAbout")
+      .val()
+      .trim()
   };
-  console.log(newClient);
-  $.ajax('/api/clients', {
-    type: 'POST',
+  //console.log(newClient);
+  $.ajax("/api/clients", {
+    type: "POST",
     data: newClient
-  }).then(
-    function () {
-      console.log('posted collection', newClient);
-    }
-  );
+  }).then(function() {
+    //console.log("second ajax call");
+
+    $.ajax({
+      method: "GET",
+      url: "/api/trainers/" + $("#clientAvailability option:selected").val()
+    }).then(function(data) {
+      console.log(data);
+    });
+  });
 });
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {

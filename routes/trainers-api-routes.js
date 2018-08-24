@@ -1,16 +1,13 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // GET route for getting all of the todos
-  app.get("/api/trainers", function(req, res) {
-    //var searchClients = the value of what time of day people are selecting
-
+  app.get("/api/clients/:clientAvailability", function(req, res) {
     db.Client.findAll({
       where: {
-        // The trainers time of day is the same as the clients
+        clientAvailability: req.params.clientAvailability
       }
-    }).then(function(dbTrainers) {
-      res.json(dbTrainers);
+    }).then(function(dbClients) {
+      res.json(dbClients);
     });
   });
 
@@ -23,7 +20,6 @@ module.exports = function(app) {
       trainerPhone: req.body.trainerPhone,
       trainerAvailability: req.body.trainerAvailability,
       trainerAbout: req.body.trainerAbout
-
     }).then(function(dbTrainers) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbTrainers);
