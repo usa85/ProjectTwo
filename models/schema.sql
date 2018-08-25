@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE gymInto_db;
+DROP DATABASE IF EXISTS gymInfo_db;
+CREATE DATABASE gymInfo_db;
 
 
