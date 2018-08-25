@@ -4,8 +4,9 @@
 #team {
    background: #eee !important;
 }
-html {
-    background-color: blue;
+
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: inherit !important;
 }
 
 .btn-primary:hover,
@@ -68,6 +69,9 @@ section .section-title {
    transition: 1s;
    transform-style: preserve-3d;
    position: relative;
+  margin-bottom: 40px;
+  
+   
 }
 
 .frontside {
@@ -145,6 +149,7 @@ section .section-title {
    color: #007b5e !important;
 }
 
+.backside .card .card-body img,
 .frontside .card .card-body img {
    width: 200px;
    height: 200px;
@@ -156,14 +161,15 @@ section .section-title {
   width:300px;
   height:400px;
   display: inline-block;
+  margin-right: 40px;
     
 }
 
 .card-body {
     color:black;
-    float: left;
+    margin-top: 40px;
 }
 #bottomArea {
     width: 100%;
-    background-color: black;
+    text-align: center;
 }
