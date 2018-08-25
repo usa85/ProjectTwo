@@ -32,33 +32,41 @@ $("#trainerSubmit").on("click", function(event) {
     }).then(function(data) {
       console.log(data);
       for (var i = 0; i < MAX_ClIENTS_TO_SHOW; i++) {
-      $("#bottomArea").append(`<div class="float-left">
-      <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-          <div class="mainflip">
-              <div class="frontside ">
-                  <div class="card">
-                      <div class="card-body text-center">
-                          <h4 class="card-title">${data[i].clientName}</h4>
-                          <p class="card-text">${data[i].clientAvailability}</p>
-                        
-                      </div>
-                  </div>
-              </div>
-              <div class="backside">
-                  <div class="card">
-                      <div class="card-body text-center mt-4">
-                          <h4 class="card-title">${data[i].clientName}</h4>
-                          <p class="card-text">${data[i].clientAbout}</p>
-                          <p class="card-text">${data[i].clientPhone}</p>
-                          <p class="card-text">${data[i].clientEmail}</p>
+        $("#bottomArea").append(`<div class="float-left">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+            <div class="mainflip">
+                <div class="frontside ">
+                    <div class="card">
+                        <div class="card-body text-center">
 
+                            
+			                      <img style = "border-radius:50%" src="${data[i].clientPhone}">
+			                      
+                            <h4 class="card-title">${data[i].clientName}</h4>
+                            <p class="card-text">${data[i].clientAvailability}</p>
                           
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>`);
+                        </div>
+                    </div>
+                </div>
+                <div class="backside">
+                    <div class="card">
+                        <div class="card-body text-center mt-4">
+
+                        
+                        <img style = "border-radius:50%" src="${data[i].clientPhone}">
+                  
+
+                            <h4 class="card-title">${data[i].clientName}</h4>
+                            <p class="card-text">${data[i].clientAbout}</p>
+                            <p class="card-text">${data[i].clientEmail}</p>
+  
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`);
       }
     });
   });
@@ -98,14 +106,14 @@ $("#clientSubmit").on("click", function(event) {
 
       for (var i = 0; i < MAX_ClIENTS_TO_SHOW; i++) {
         $("#bottomArea").append(`<div class="float-left">
-        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+        <div class="image-flip " ontouchstart="this.classList.toggle('hover');">
             <div class="mainflip">
                 <div class="frontside ">
                     <div class="card">
                         <div class="card-body text-center">
 
                             <div class="card-image">
-			                          <img class = "animated fadeIn" style = "border-radius:50%" src="/${data[i].photoLink}">
+			                          <img style = "border-radius:50%" src="${data[i].trainerPhone}">
 			                      </div>
                             <h4 class="card-title">${data[i].trainerName}</h4>
                             <p class="card-text">${data[i].trainerAvailability}</p>
@@ -118,12 +126,11 @@ $("#clientSubmit").on("click", function(event) {
                         <div class="card-body text-center mt-4">
 
                         <div class="card-image">
-                        <img class = "animated fadeIn" style = "border-radius:50%" src="/${data[i].photoLink}}">
+                        <div style = "border-radius:50%" src="/${data[i].trainerPhone}}"></div>
                     </div>
 
                             <h4 class="card-title">${data[i].trainerName}</h4>
                             <p class="card-text">${data[i].trainerAbout}</p>
-                            <p class="card-text">${data[i].trainerPhone}</p>
                             <p class="card-text">${data[i].trainerEmail}</p>
   
                             
