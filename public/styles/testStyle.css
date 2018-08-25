@@ -158,7 +158,10 @@ section .section-title {
 }
 
 .float-left{
-    clear: both;
+  /*  clear: both;*/
+  width:300px;
+  height:400px;
+  display: inline-block;
     
 }
 
