@@ -16,6 +16,9 @@ body {
   opacity:.93;
   border-top: 1px solid black;
   border-bottom:1px solid black;
+  color:white;
+  font-weight:bold;
+  
 }
 .jumbotron{
   margin-top: 20px;
@@ -31,13 +34,13 @@ body {
   padding:80px;
 }
   .footer {
-    position:relative;
+    position:fixed;
     bottom:0;
     width:100%;
     padding-top:20px;
-    height:40px;   /* Height of the footer */
+    height:35px;   /* Height of the footer */
     opacity:.93;
-    overflow: auto;
+    overflow: hidden;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
   }
