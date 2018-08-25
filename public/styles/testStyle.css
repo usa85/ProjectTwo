@@ -8,6 +8,10 @@ html {
     background-color: blue;
 }
 
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: inherit !important;
+}
+
 .btn-primary:hover,
 .btn-primary:focus {
    background-color: #108d6f;
@@ -68,6 +72,8 @@ section .section-title {
    transition: 1s;
    transform-style: preserve-3d;
    position: relative;
+  margin-bottom: 40px;
+   
 }
 
 .frontside {
@@ -158,9 +164,11 @@ section .section-title {
 
 .card-body {
     color:black;
-    float: left;
+    margin-top: 40px;
 }
 #bottomArea {
     width: 100%;
+    height: 400px;
     background-color: black;
+    text-align: center;
 }
