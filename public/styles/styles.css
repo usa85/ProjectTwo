@@ -20,6 +20,9 @@ body {
   font-weight:bold;
 }
 
+.pageButtons{
+  margin-left: -60px;
+}
 
 .jumbotron{
   margin-top: 20px;
@@ -176,8 +179,4 @@ body {
   font-style: arial;
 }
 
-.cardSpace {
-  background-color: red;
-  height: 100px;
-  width: 100px;
-}
+
