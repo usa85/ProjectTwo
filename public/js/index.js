@@ -112,9 +112,8 @@ $("#clientSubmit").on("click", function(event) {
                     <div class="card">
                         <div class="card-body text-center">
 
-                            <div class="card-image">
-			                          <img style = "border-radius:50%" src="${data[i].trainerPhone}">
-			                      </div>
+                          <img style = "border-radius:50%" src="${data[i].trainerPhone}">
+
                             <h4 class="card-title">${data[i].trainerName}</h4>
                             <p class="card-text">${data[i].trainerAvailability}</p>
                           
@@ -125,9 +124,7 @@ $("#clientSubmit").on("click", function(event) {
                     <div class="card">
                         <div class="card-body text-center mt-4">
 
-                        <div class="card-image">
-                        <div style = "border-radius:50%" src="/${data[i].trainerPhone}}"></div>
-                    </div>
+                        <img style = "border-radius:50%" src="${data[i].trainerPhone}">
 
                             <h4 class="card-title">${data[i].trainerName}</h4>
                             <p class="card-text">${data[i].trainerAbout}</p>
